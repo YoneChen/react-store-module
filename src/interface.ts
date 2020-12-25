@@ -1,7 +1,5 @@
 type AsyncAction<S> = (dispatch: StoreDispatch<S>, state: S) => Promise<any>;
-type StoreDispatch<S> = (action: AsyncAction<S> | Action) => Promise<any>;
-
-type Action = {type: string | number, payload: any};
+type StoreDispatch<S> = (action: AsyncAction<S> | string | number, payload?: any) => Promise<any>;
 
 type Actions<S> = {
   [key: string]: (state: S, payload: any) => S;
@@ -17,7 +15,7 @@ type StoreModule<S = {}, G = {}> = {
   actions?: Actions<S>;
   getters?: Getters<S, G>;
 };
-type Reducer<S> = (prevState: S, action: Action) => S;
+type Reducer<S> = (prevState: S, action: {type: string | number, payload: any}) => S;
 
 interface Store<S = {}> {
   state: S;

@@ -26,16 +26,17 @@ const moduleToStore = <S>({
 }: StoreModule<S>): [string, Store] => {
   const reducer = actionsToReducer(actions);
   const [state, dispatch] = useReducer<Reducer<S>>(reducer, initState);
+  const syncDispatch = (type: string | number, payload: any) => dispatch({ type, payload });
   const memoizedStates = gettersToMemoizedStates(state, getters);
-  const newDispatch: StoreDispatch<S> = async (action) => {
+  const asyncDispatch: StoreDispatch<S> = async (action, payload) => {
     if (action instanceof Function) {
-      return action(newDispatch, state);
+      return action(asyncDispatch, state);
     }
-    return Promise.resolve(dispatch(action));
+    return Promise.resolve(syncDispatch(action, payload));
   };
 
   return [name, {
-    state, dispatch: newDispatch, getters: memoizedStates,
+    state, dispatch: asyncDispatch, getters: memoizedStates,
   }];
 };
 
