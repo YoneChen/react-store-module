@@ -1,10 +1,12 @@
 {
-  "name": "react-store",
+  "name": "react-store-module",
   "version": "1.0.0",
-  "description": "",
+  "description": "Centralized State Management easily with hooks for React Applications.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc"
@@ -15,11 +17,11 @@
     "hook",
     "vuex"
   ],
-  "homepage": "https://github.com/YoneChen/react-store#readme",
+  "homepage": "https://github.com/YoneChen/react-store-module#readme",
   "author": "yonechen",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YoneChen/react-store.git"
+    "url": "https://github.com/YoneChen/react-store-module.git"
   },
   "license": "MIT",
   "dependencies": {},
