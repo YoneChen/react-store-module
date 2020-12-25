@@ -8,9 +8,19 @@
     "dev": "tsc --watch",
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "store",
+    "hook",
+    "vuex"
+  ],
+  "homepage": "https://github.com/YoneChen/react-store#readme",
   "author": "yonechen",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YoneChen/react-store.git"
+  },
+  "license": "MIT",
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.8.0",
