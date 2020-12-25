@@ -2,7 +2,7 @@ import {
   ReactNode, useReducer, useMemo, createContext, useContext, createElement,
 } from 'react';
 import {
-  Actions, Getters, Reducer, StoreModule, StoreDispatch, Store,
+  Actions, Getters, Reducer, StoreModule, StoreDispatch, Store, AsyncAction,
 } from './interface';
 
 type StoreProviderProps = {
@@ -61,5 +61,5 @@ const useStore = <S>(storeName: string) => {
 export default StoreProvider;
 export {
   useStore,
-  Actions, Getters, Reducer, StoreModule, StoreDispatch, Store,
+  Actions, Getters, Reducer, StoreModule, StoreDispatch, Store, AsyncAction,
 };
