@@ -2,8 +2,9 @@
   "name": "react-store",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": ["lib"],
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc"
