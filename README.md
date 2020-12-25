@@ -63,14 +63,14 @@ This step will create the global store context.
 
 ### `useStore` to get states and dispatch actions
 
-When called `useStore` by passing module name, it will return `{ states, dispatch }` of the store.
+When called `useStore` by passing module name, it will return `{ state, dispatch }` of the store.
 
 ```jsx
 // views/home.js
 import { useStore } from 'react-store-module';
 function Home() {
-  const { states } = useStore('theme');
-  return <div style={{ backgroundColor: states.color }}><div/>
+  const { state } = useStore('theme');
+  return <div style={{ backgroundColor: state.color }}><div/>
 }
 export default Home
 ```
@@ -100,6 +100,6 @@ function HeaderBar() {
 export default HeaderBar
 ```
 
-The changed states.color will trigger component to rerender.
+The changed state.color will trigger component to rerender.
 
 ## TODO
